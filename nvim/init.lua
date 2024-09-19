@@ -10,6 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
+vim.opt.rtp:append(vim.fn.expand("~/.luarocks/share/lua/5.1"))
 
 require("vim-opts")
 require("lazy").setup("plugins")

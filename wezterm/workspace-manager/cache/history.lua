@@ -1,6 +1,6 @@
 return {
   {dir = "Refresh Files", count = 0, last_used = 0},
-  {dir = "/Volumes/Transcend/Developer/projects", count = 16, last_used = 1726655219},
+  {dir = "/Volumes/Transcend/Developer/projects", count = 17, last_used = 1726749413},
   {dir = "/Volumes/Transcend/Developer/projects/bittensor-wallet/backend", count = 11, last_used = 1726655219},
   {dir = "/Users/anon/.config/wezterm", count = 7, last_used = 1726655225},
   {dir = "/Volumes/Transcend/Developer/projects/bittensor-commands", count = 7, last_used = 1726655219},

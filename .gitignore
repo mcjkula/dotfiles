@@ -1,3 +1,6 @@
 QtProject
 *.DS_Store
 *cache/*
+
+# Environment Variables
+*.env
