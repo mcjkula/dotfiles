@@ -75,7 +75,6 @@ return {
 				"clangd",
 				"tsserver",
                 "pyright",
-				"ruff_lsp",
 				"rust_analyzer",
 				"dockerls",
 				"yamlls",
@@ -93,6 +92,20 @@ return {
 						capabilities = capabilities,
 					})
 				end,
+                pyright = function()
+                    require("lspconfig").pyright.setup({
+                        capabilities = capabilities,
+                        settings = {
+                            python = {
+                                analysis = {
+                                    autoSearchPaths = true,
+                                    useLibraryCodeForTypes = true,
+                                    diagnosticMode = "workspace"
+                                }
+                            }
+                        }
+                    })
+                end,
 			},
 		})
 
@@ -101,7 +114,6 @@ return {
         require("mason-null-ls").setup({
 			ensure_installed = {
 				"stylua",
-				"ruff",
 				"tflint",
 			},
 			automatic_installation = true,

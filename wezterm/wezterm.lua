@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 local workspaces = require("workspace-manager.init")
+local sshagent = require("sshagent")
 
 local config = {}
 
@@ -10,7 +11,7 @@ end
 
 config.color_scheme = "Gruvbox Dark (Gogh)"
 
-config.font = wezterm.font("MesloLGS NF")
+config.font = wezterm.font("MesloLGS Nerd Font")
 config.font_size = 15.8 -- 16 // Has to be adjusted because of 'use_fancy_tab_bar = false'
 config.window_decorations = "RESIZE"
 
@@ -54,6 +55,10 @@ wezterm.on("open-workspace", function(window, pane)
 	workspaces.open_workspace(window, pane)
 end)
 
+wezterm.on("open-sshagent", function(window, pane)
+  sshagent.connect_to_server(window, pane)
+end)
+
 config.keys = {
 	{
 		key = "l",
@@ -82,6 +87,11 @@ config.keys = {
 		mods = "SUPER",
 		action = wezterm.action.EmitEvent("open-workspace"),
 	},
+    {
+        key = "s",
+        mods = "CTRL|SHIFT",
+        action = wezterm.action.EmitEvent("open-sshagent"),
+    },
 }
 
 return config

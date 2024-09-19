@@ -1,67 +1,64 @@
-# -- Changing Window Focus --
+# Key Legend
+# 0x00 : A     0x0B : B     0x08 : C     0x02 : D     0x0E : E
+# 0x03 : F     0x05 : G     0x04 : H     0x22 : I     0x26 : J
+# 0x28 : K     0x25 : L     0x2E : M     0x2D : N     0x1F : O
+# 0x23 : P     0x0C : Q     0x0F : R     0x01 : S     0x11 : T
+# 0x20 : U     0x09 : V     0x0D : W     0x07 : X     0x10 : Y
+# 0x06 : Z
 
-# change window focus within space
-#alt - j : yabai -m window --focus south
-#alt - k : yabai -m window --focus north
-#alt - h : yabai -m window --focus west
-#alt - l : yabai -m window --focus east
+# -- Changing Window Focus --
+ctrl + alt - 0x04 : yabai -m window --focus west
+ctrl + alt - 0x26 : yabai -m window --focus south
+ctrl + alt - 0x28 : yabai -m window --focus north
+ctrl + alt - 0x25 : yabai -m window --focus east
 
 # -- Modifying the Layout --
-
-# rotate layout clockwise
 shift + alt - 0x0F : yabai -m space --rotate 270
-
-# flip along y-axis
-shift + alt - 0x10 : yabai -m space --mirror y-axis
-
-# flip along x-axis
+shift + alt - 0x03 : yabai -m space --mirror y-axis
 shift + alt - 0x07 : yabai -m space --mirror x-axis
-
-# toggle window float
 shift + alt - 0x11 : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
-
 # -- Modifying Window Size --
-
-# maximize a window
 shift + alt - 0x2E : yabai -m window --toggle zoom-fullscreen
-
-# balance out tree of windows (resize to occupy same area)
-shift + alt - 0x0E : yabai -m space --balance
-
-ctrl + shift - 0x00 : yabai -m window --resize left:-100:0 ; yabai -m window --resize right:-100:0
-ctrl + shift - 0x01 : yabai -m window --resize bottom:0:100 ; yabai -m window --resize top:0:100
-ctrl + shift - 0x0D : yabai -m window --resize top:0:-100 ; yabai -m window --resize bottom:0:-100
-ctrl + shift - 0x02 : yabai -m window --resize right:100:0 ; yabai -m window --resize left:100:0
+shift + alt - 0x0B : yabai -m space --balance
+ctrl + alt - 0x04 : yabai -m window --resize left:-100:0 ; yabai -m window --resize right:-100:0
+ctrl + alt - 0x26 : yabai -m window --resize bottom:0:100 ; yabai -m window --resize top:0:100
+ctrl + alt - 0x28 : yabai -m window --resize top:0:-100 ; yabai -m window --resize bottom:0:-100
+ctrl + alt - 0x25 : yabai -m window --resize right:100:0 ; yabai -m window --resize left:100:0
 
 # -- Moving Windows Around --
-
-# swap windows
-shift + alt - 0x28 : yabai -m window --swap south
-shift + alt - 0x22 : yabai -m window --swap north
-shift + alt - 0x26 : yabai -m window --swap west
+shift + alt - 0x04 : yabai -m window --swap west
+shift + alt - 0x26 : yabai -m window --swap south
+shift + alt - 0x28 : yabai -m window --swap north
 shift + alt - 0x25 : yabai -m window --swap east
-
-# move window and split
-ctrl + alt - 0x28 : yabai -m window --warp south
-ctrl + alt - 0x22 : yabai -m window --warp north
-ctrl + alt - 0x26 : yabai -m window --warp west
-ctrl + alt - 0x25 : yabai -m window --warp east
-
-# move window to display left and right
-#shift + alt - k : yabai -m space --focus prev
-#shift + alt - x : yabai -m space --focus next
-
-# move window to space
-#shift + alt - 1 : yabai -m window --space 1;
-#shift + alt - 2 : yabai -m window --space 2;
-#shift + alt - 3 : yabai -m window --space 3;
-#shift + alt - 4 : yabai -m window --space 4;
-#shift + alt - 5 : yabai -m window --space 5;
+ctrl + cmd - 0x04 : yabai -m window --warp west
+ctrl + cmd - 0x26 : yabai -m window --warp south
+ctrl + cmd - 0x28 : yabai -m window --warp north
+ctrl + cmd - 0x25 : yabai -m window --warp east
+shift + alt - 0x0B : yabai -m window --display west; yabai -m display --focus west
+shift + alt - 0x03 : yabai -m window --display east; yabai -m display --focus east
+shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
+shift + alt - 2 : yabai -m window --space 2; yabai -m space --focus 2
+shift + alt - 3 : yabai -m window --space 3; yabai -m space --focus 3
+shift + alt - 4 : yabai -m window --space 4; yabai -m space --focus 4
+shift + alt - 5 : yabai -m window --space 5; yabai -m space --focus 5
 
 # -- Starting/Stopping/Restarting Yabai --
-
-# stop/start/restart yabai
-ctrl + alt - 0x01 : yabai --start-service
 ctrl + alt - 0x0C : yabai --stop-service
+ctrl + alt - 0x01 : yabai --start-service
 ctrl + alt - 0x0F : yabai --restart-service
+
+# -- Additional Functionality --
+shift + alt - 0x2D : yabai -m space --create
+shift + alt - 0x02 : yabai -m space --destroy
+ctrl + alt - 1 : yabai -m space --focus 1
+ctrl + alt - 2 : yabai -m space --focus 2
+ctrl + alt - 3 : yabai -m space --focus 3
+ctrl + alt - 4 : yabai -m space --focus 4
+ctrl + alt - 5 : yabai -m space --focus 5
+shift + alt - 0x01 : yabai -m window --stack next
+ctrl + alt - 0x01 : yabai -m window --stack prev
+ctrl + alt - 0x26 : yabai -m window --focus stack.next || yabai -m window --focus south
+ctrl + alt - 0x28 : yabai -m window --focus stack.prev || yabai -m window --focus north
+ctrl + alt - 0x23 : yabai -m window --focus parent
+ctrl + alt - 0x08 : yabai -m window --focus child

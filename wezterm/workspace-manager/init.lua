@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 local workspaces = {}
-local cache_file = "/Users/maciej/.config/wezterm/workspace-manager/cache/history.lua"
+local cache_file = "/Users/anon/.config/wezterm/workspace-manager/cache/history.lua"
 local MAX_DEPTH = 2
 
 local function read_cache()
@@ -68,9 +68,9 @@ local function update_cache()
 	local _, stdout, _ = wezterm.run_child_process({
 		"find",
 		"/Volumes/Transcend/Developer/projects",
-		"/Users/maciej/.local/share/nvim/lazy/md-pdf.nvim",
-		"/Users/maciej",
-		"/Users/maciej/Library/Group Containers/G69SCX94XU.duck/Library/Application Support/duck/Volumes.noindex/Nextcloud/documents",
+		"/Users/anon/.local/share/nvim/lazy/md-pdf.nvim",
+		"/Users/anon",
+		"/Users/anon/Library/Group Containers/G69SCX94XU.duck/Library/Application Support/duck/Volumes.noindex/Nextcloud/documents",
 		"-maxdepth",
 		tostring(MAX_DEPTH),
 		"-type",
@@ -78,20 +78,20 @@ local function update_cache()
 	})
 	local new_dirs = wezterm.split_by_newlines(stdout)
 	local blacklist = {
-		--"/Users/maciej/Library/.*",
-		"/Users/maciej/Pictures/.*",
-		"/Users/maciej/Downloads/.*",
-		"/Users/maciej/Music/.*",
-		"/Users/maciej/Documents/.*",
-		"/Users/maciej/Movies/.*",
-		"/Users/maciej/Applications/.*",
-		"/Users/maciej/Desktop/.*",
-		"/Users/maciej/dbProjects/.*",
-		"/Users/maciej/qtProjects/.*",
-		"/Users/maciej/Public/.*",
-		"/Users/maciej/Zotero/.*",
-		"/Users/maciej/ptProjects/.*",
-		"/Users/maciej/Cisco Packet Tracer 8.2.1/.*",
+		--"/Users/anon/Library/.*",
+		"/Users/anon/Pictures/.*",
+		"/Users/anon/Downloads/.*",
+		"/Users/anon/Music/.*",
+		"/Users/anon/Documents/.*",
+		"/Users/anon/Movies/.*",
+		"/Users/anon/Applications/.*",
+		"/Users/anon/Desktop/.*",
+		"/Users/anon/dbProjects/.*",
+		"/Users/anon/qtProjects/.*",
+		"/Users/anon/Public/.*",
+		"/Users/anon/Zotero/.*",
+		"/Users/anon/ptProjects/.*",
+		"/Users/anon/Cisco Packet Tracer 8.2.1/.*",
 	}
 	new_dirs = filter_dirs(new_dirs, blacklist)
 	local old_dirs = read_cache() or {}
