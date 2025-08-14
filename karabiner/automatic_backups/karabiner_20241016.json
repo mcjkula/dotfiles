@@ -1,8 +1,4 @@
 {
-    "global": {
-        "enable_notification_window": false,
-        "show_in_menu_bar": false
-    },
     "profiles": [
         {
             "complex_modifications": {
@@ -25,12 +21,12 @@
             },
             "devices": [
                 {
+                    "disable_built_in_keyboard_if_exists": true,
                     "identifiers": {
                         "is_keyboard": true,
                         "product_id": 592,
                         "vendor_id": 1452
                     },
-                    "manipulate_caps_lock_led": false,
                     "simple_modifications": [
                         {
                             "from": { "key_code": "left_control" },
@@ -41,10 +37,7 @@
             ],
             "name": "Default profile",
             "selected": true,
-            "virtual_hid_keyboard": {
-                "indicate_sticky_modifier_keys_state": false,
-                "keyboard_type_v2": "iso"
-            }
+            "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
         }
     ]
 }

@@ -1,18 +1,32 @@
 {
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.5",
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0",
   "schemes" : [
     {
       "pointer" : {
-        "acceleration" : 1,
-        "disableAcceleration" : true
+        "disableAcceleration" : true,
+        "acceleration" : 0
       },
       "if" : {
         "device" : {
-          "category" : "trackpad",
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
           "vendorID" : "0x5ac",
           "productID" : "0x342",
-          "productName" : "Apple Internal Keyboard \/ Trackpad"
+          "category" : "trackpad"
         }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "productID" : "0xb020",
+          "serialNumber" : "283FC663A32CE1E7",
+          "productName" : "MX Vertical",
+          "vendorID" : "0x46d",
+          "category" : "mouse"
+        }
+      },
+      "pointer" : {
+        "disableAcceleration" : true
       }
     }
   ]

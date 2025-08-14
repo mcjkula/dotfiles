@@ -24,9 +24,11 @@ set -x PATH $PATH ~/.android-sdk-macosx/platform-tools/
 set -gx PATH /opt/homebrew/opt/openjdk/bin $PATH
 # set -gx CPPFLAGS "-I/opt/homebrew/opt/openjdk/include"
 
+# Add Python variables
 # pyenv init - | source
 # set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
 # set pyenv_version (pyenv version-name | string split ':')
+set -gx PYTHONDONTWRITEBYTECODE 1
 
 # Set compilation flags
 set -x LDFLAGS "-L/opt/homebrew/opt/llvm/lib"
